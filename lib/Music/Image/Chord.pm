@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use vars qw($VERSION);
 
-$VERSION = '0.005';
+$VERSION = '0.006';
 
 use Imager;
 
@@ -373,7 +373,7 @@ Music::Image::Chord - Perl extension for generating guitar tab chords
   $image = new Music::Image::Chord();
   $old_font = $image->font('/path/to/my/TrueType/font.ttf');
   $old_file = $image->file('/path/to/file/to/save.png');
-  $image->debug(1);
+  $image->draw(name => 'D'); # Write the actual file.
 
 =head1 DESCRIPTION
 
@@ -433,9 +433,17 @@ Returns and optionally sets the beginning fret in the image. Defaults to 1.
  $image->fret(5);
  print $image->fret(); # prints the current fret setting.
 
-=item B<draw([HASH])>
+=item B<draw([optional named parameters])>
 
 Renders the chord described into the appropriate file.
+Optional named parameters are:
+
+  name - The name of the chord
+  fret - Beginning fret
+  barres - Chord barres, not implemented yet.
+  chord - If the chord isn't represented in the list, describe it like 'xx0232'.
+
+$image->draw( name => 'D' ); # Draw a D chord
 
 =item B<grid>
 
@@ -449,11 +457,12 @@ Returns and optionally sets the grid coordinates. X and Y are the UL corner of t
 
 =head1 SEE ALSO
 
+L<Imager>
 perl(1).
 
 =head1 AUTHOR
 
-Jeffrey Goff, E<lt>drforr@pobox.comE<gt>
+Jeffrey Goff, E<lt>jgoff@cpan.org<gt>
 Inspiration by #perl
 
 =head1 COPYRIGHT AND LICENSE
