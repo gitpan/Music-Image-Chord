@@ -16,7 +16,7 @@ $image->bar_thickness(3);
 $image->grid(x=>0,y=>25,w=>10,h=>15);
 $image->crop_width(5);
 $image->debug(1);
-#$image->font('/Library/Fonts/ArialHB.ttf'); # Only needed for title
+$image->font('/Library/Fonts/ArialHB.ttf'); # Only needed for title
 $image->file('chord.png');
 #  $image->bounds(width=>120,height=>120);
 $image->bounds(70,120);

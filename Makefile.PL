@@ -5,7 +5,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Music::Image::Chord',
     VERSION_FROM      => 'lib/Music/Image/Chord.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => { Imager => 0 }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Music/Image/Chord.pm', # retrieve abstract from module
        AUTHOR         => 'Jeffrey Goff <jeffreygoff@local.>') : ()),
